@@ -337,19 +337,27 @@ export GITHUB_PERSONAL_ACCESS_TOKEN="github_pat_xxx"
 
 ---
 
-## ▶️ Run the MCP Server (Docker / STDIO)
-
-Start the GitHub MCP Server:
+## STEP 0.5 Install + Run the wrapper locally (no Docker yet)
 
 ```bash
-docker run -it --rm \
-  -e GITHUB_PERSONAL_ACCESS_TOKEN \
-  ghcr.io/github/github-mcp-server
+cd mcp-github-http-wrapper
+npm install
+export GITHUB_PERSONAL_ACCESS_TOKEN="github_pat_xxx"
+npm start
 ```
 
-The MCP server is now running and waiting for tool calls via **STDIO**.
+Expected:
+```
+GitHub MCP HTTP Wrapper listening on http://localhost:3333/mcp
+```
 
----
+Validation (HTTP works now):
+
+```bash
+curl http://localhost:3333/mcp \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":"1","method":"tools/list","params":{}}'
+```
 
 # 🔹 STEP 1 — Project Bootstrap with Spring Initializr
 
