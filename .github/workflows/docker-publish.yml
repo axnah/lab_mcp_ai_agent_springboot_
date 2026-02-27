@@ -10,7 +10,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: axnah/lab-mcp-ai-agent-springboot
 
 jobs:
   build-and-push:
