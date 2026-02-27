@@ -1,9 +1,9 @@
 github:
-  owner: ${GITHUB_OWNER}
-  repo: ${GITHUB_REPO}
+  owner: ${GITHUB_OWNER:demo_owner}
+  repo: ${GITHUB_REPO:demo_repo}
   
 anthropic:
-  api-key: ${ANTHROPIC_API_KEY}
+  api-key: ${ANTHROPIC_API_KEY:demo_key}
   model: claude-opus-4-20250514
   timeout-seconds: 60
   
